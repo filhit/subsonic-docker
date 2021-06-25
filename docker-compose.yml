@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+        subsonic:
+                build: .
+                ports:
+                        - "30002:4040"
+                volumes:
+                        - "/home/diver/sync/MusicLib:/var/music:ro"
+                        - "./data:/var/subsonic"
+                container_name: subsoniccontainer
+                restart: unless-stopped
+
